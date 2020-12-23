@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Google login example app</span>
+  <span class="toolbar-spacer"></span>
+  <button *ngIf="user$ | async as user"
+          (click)="logout()"
+          mat-button
+          matTooltip="Logout"
+          aria-label="Logout">
+    {{user.name}}
+    <mat-icon>login</mat-icon>
+  </button>
+</mat-toolbar>

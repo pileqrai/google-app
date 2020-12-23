@@ -1,0 +1,6 @@
+<div>
+  <button mat-stroked-button color="primary" (click)="login()">Login with Google</button>
+  <div class="error-message" *ngIf="error$ | async as error">
+    Error: {{error}}
+  </div>
+</div>

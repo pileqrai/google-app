@@ -1,0 +1,13 @@
+@import "src/styles";
+
+:host {
+  @extend .full-screen;
+
+  .error-message {
+    background: $error-background;
+    border: 1px solid $error-text;
+    color: $error-text;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+}
