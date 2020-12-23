@@ -3,6 +3,8 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {ProfileComponent} from './profile.component';
 import {AuthService} from '../../serivces/auth.service';
 import {of} from 'rxjs';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -10,7 +12,11 @@ describe('ProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       declarations: [ ProfileComponent ],
+      imports: [
+        FormsModule,
+      ],
       providers: [{
         provide: AuthService,
         useValue: {
