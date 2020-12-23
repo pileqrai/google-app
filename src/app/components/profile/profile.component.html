@@ -1,0 +1,22 @@
+<mat-card class="example-card" *ngIf="user$ | async as user">
+  <mat-card-header>
+    <img mat-card-avatar [src]="user.imageUrl"/>
+    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-full-width">
+      <mat-label>Family name</mat-label>
+      <input matInput readonly [ngModel]="user.familyName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Given name</mat-label>
+      <input matInput readonly [ngModel]="user.givenName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput readonly [ngModel]="user.id">
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>

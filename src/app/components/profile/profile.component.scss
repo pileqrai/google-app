@@ -1,0 +1,13 @@
+@import "src/styles";
+
+:host {
+  @extend .full-screen;
+
+  mat-card {
+    min-width: 25%;
+
+    mat-card-content mat-form-field {
+      display: block;
+    }
+  }
+}
