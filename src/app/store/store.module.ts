@@ -12,7 +12,7 @@ import {environment} from '../../environments/environment';
   imports: [
     CommonModule,
     NgxsModule.forRoot(STATES_MODULES, OPTIONS_CONFIG),
-    environment.withStorage ? NgxsStoragePluginModule.forRoot() : null,
+    environment.withStorage ? NgxsStoragePluginModule.forRoot() : [],
     NgxsRouterPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(LOGGER_CONFIG),
     NgxsReduxDevtoolsPluginModule.forRoot(DEVTOOLS_REDUX_CONFIG),
