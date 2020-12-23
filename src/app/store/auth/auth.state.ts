@@ -5,7 +5,7 @@ import {fromPromise} from 'rxjs/internal-compatibility';
 import {catchError, switchMap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 import {User} from '../../models/user.model';
-import {Observable} from 'rxjs';
+import {EMPTY, Observable} from 'rxjs';
 import {Navigate} from '@ngxs/router-plugin';
 
 export interface AuthStateModel {
@@ -42,7 +42,10 @@ export class AuthState {
       error: null,
     });
     return fromPromise(this.gapiAuthService.authenticate()).pipe(
-      catchError(error => dispatch(new LoginError(error.error || 'Unhandled error'))),
+      catchError(error => {
+        dispatch(new LoginError(error.error || 'Unhandled error'));
+        return EMPTY;
+      }),
       switchMap((user: User) => dispatch(new LoginSuccess(user)))
     );
   }
